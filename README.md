@@ -5,7 +5,7 @@
 ---
 ### 1. Graph Representation
 - Coding Adjacency List 
-```java
+```cpp
 class Graph {
 	int V;
 	list<int> *l;
