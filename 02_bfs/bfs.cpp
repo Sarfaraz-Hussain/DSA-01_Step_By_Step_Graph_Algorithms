@@ -24,7 +24,7 @@ public:
 		}
 	}
 
-	void bfs(int src) {
+	void bfs(int src = 0) {
 		queue<int> q;
 		q.push(src);
 		bool visited[V] {false};
