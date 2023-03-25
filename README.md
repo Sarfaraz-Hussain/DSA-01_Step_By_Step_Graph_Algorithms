@@ -55,6 +55,45 @@ public:
 5 --> 3 4 6 
 6 --> 5 
 ```
+---
+### 2. BFS Algorithm
+- Coding BFS algo
+```c++
+void bfs(int src = 0) {
+		queue<int> q;
+		q.push(src);
+		bool visited[V] {false};
+		visited[src] = true;
 
-  
+		while (!q.empty()) {
+			int node = q.front();
+			q.pop();
+			cout << node << " ";
+			for (auto nbr : l[node]) {
+				if (!visited[nbr]) {
+					q.push(nbr);
+					visited[nbr] = true;
+				}
+			}
+		}
+	}
+```
+- Input file
+```text
+7
+8
+1
+1 2
+1 0
+2 3
+0 4
+3 4
+3 5
+4 5
+5 6
+```
+- Output file
+```text
+1 2 0 3 4 5 6 
+```
 
