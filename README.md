@@ -1,5 +1,7 @@
 ![logo](https://raw.githubusercontent.com/kdn251/interviews/master/images/dijkstra.gif)
 # **This is the Graph Playlist in C++**
+### _Language used_ --> C++
+### _Editor used_ --> Sublime Text 4
 ## _Here in this repository I will upload the coding solution for graph algorithms on a daily basis._
 
 ---
@@ -96,4 +98,70 @@ void bfs(int src = 0) {
 ```text
 1 2 0 3 4 5 6 
 ```
+### Single Source Shortest Path 
+- Code
+```java
+void singleSourceShortestPath(int src, int dest = -1) {
+		queue<int> q;
+		q.push(src);
+		bool visited[V] {false};
+		visited[src] = true;
+		int parent[V] { -1};
+		parent[src] = src;
+		int distance[V] {0};
+
+		while (!q.empty()) {
+			int node = q.front();
+			q.pop();
+			for (auto nbr : l[node]) {
+				if (!visited[nbr]) {
+					parent[nbr] = node;
+					distance[nbr] = distance[node] + 1;
+					q.push(nbr);
+					visited[nbr] = true;
+				}
+			}
+		}
+		for (int i = 0; i < V; i++) {
+			cout << "Distance from src " << src << " to " << i << " is " << distance[i] << endl;
+		}
+		if (dest != -1) {
+			int temp = dest;
+			cout << temp << " --> ";
+			while (temp != src) {
+				temp = parent[temp];
+				cout << temp << " --> ";
+			}
+			cout << src << endl;
+		}
+	}
+```
+
+- input.txt
+```text
+7
+8
+1
+1 2
+1 0
+2 3
+0 4
+3 4
+3 5
+4 5
+5 6
+```
+- output.txt
+```text
+Distance from src 1 to 0 is 1
+Distance from src 1 to 1 is 0
+Distance from src 1 to 2 is 1
+Distance from src 1 to 3 is 2
+Distance from src 1 to 4 is 2
+Distance from src 1 to 5 is 3
+Distance from src 1 to 6 is 4
+6 --> 5 --> 3 --> 2 --> 1 --> 1
+```
+
+
 
