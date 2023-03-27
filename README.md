@@ -98,7 +98,7 @@ void bfs(int src = 0) {
 ```text
 1 2 0 3 4 5 6 
 ```
-### Single Source Shortest Path 
+### 3. Single Source Shortest Path 
 - Code
 ```java
 void singleSourceShortestPath(int src, int dest = -1) {
@@ -162,7 +162,7 @@ Distance from src 1 to 5 is 3
 Distance from src 1 to 6 is 4
 6 --> 5 --> 3 --> 2 --> 1 --> 1
 ```
-### Depth First Search Algorithm(DFS)
+### 4. Depth First Search Algorithm(DFS)
 _It is a recursive algorithm_
 
 - Code for DFS
