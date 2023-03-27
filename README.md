@@ -162,6 +162,49 @@ Distance from src 1 to 5 is 3
 Distance from src 1 to 6 is 4
 6 --> 5 --> 3 --> 2 --> 1 --> 1
 ```
+### Depth First Search Algorithm(DFS)
+_It is a recursive algorithm_
 
+- Code for DFS
+```java
+void dfs(int src, bool visited[]) {
+		int flag = 1;
+		for (auto nbr : l[src]) {
+			if (visited[nbr] == false) {
+				flag = 0;
+				break;
+			}
+		}
+		if (flag) {
+			return;
+		}
+		for (auto nbr : l[src]) {
+			if (!visited[nbr]) {
+				cout << nbr << " ";
+				visited[nbr] = true;
+				dfs(nbr, visited);
+			}
+		}
+	}
+```
+
+- input.txt
+```text
+7
+8
+1
+0 1
+1 2
+2 3
+3 5
+5 6
+4 5
+0 4
+3 4
+```
+- output.txt
+```text
+1 0 4 5 3 2 6 
+```
 
 
